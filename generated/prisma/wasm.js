@@ -131,7 +131,17 @@ exports.Prisma.UserScalarFieldEnum = {
   rua: 'rua',
   numero: 'numero',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  points: 'points'
+};
+
+exports.Prisma.UserBenefitsScalarFieldEnum = {
+  id: 'id',
+  benefit: 'benefit',
+  cost: 'cost',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
 };
 
 exports.Prisma.SleepScalarFieldEnum = {
@@ -152,9 +162,15 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
+  UserBenefits: 'UserBenefits',
   Sleep: 'Sleep'
 };
 

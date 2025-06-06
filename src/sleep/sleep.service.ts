@@ -16,6 +16,21 @@ export class SleepService {
         const duration = Math.floor(
             (endDate.getTime() - startDate.getTime()) / 1000,
         ); // duração em segundos
+
+        await this.prisma.user.update({
+            where: {
+                id: data.userId,
+            },
+            data: {
+                points: {
+                    increment:
+                        duration < 1000 * 60 * 60
+                            ? duration * 10
+                            : duration / 10,
+                },
+            },
+        });
+
         return this.prisma.sleep.create({
             data: {
                 start: startDate,

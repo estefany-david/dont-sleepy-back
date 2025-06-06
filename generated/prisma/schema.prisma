@@ -31,7 +31,23 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  sleep Sleep[]
+  points Int
+
+  sleep    Sleep[]
+  benefits UserBenefits[]
+}
+
+model UserBenefits {
+  id Int @id @default(autoincrement())
+
+  benefit String
+  cost    Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
 }
 
 model Sleep {

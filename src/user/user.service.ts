@@ -45,6 +45,7 @@ export class UsersService {
                 bairro: data.bairro,
                 rua: data.rua,
                 numero: data.numero,
+                points: data.points,
             },
         });
     }

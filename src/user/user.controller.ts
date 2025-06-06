@@ -52,6 +52,7 @@ export class UserController {
             bairro: userData.bairro,
             rua: userData.rua,
             numero: userData.numero,
+            points: 500,
         });
         // Não retorna a senha
         const { password, ...userWithoutPassword } = user;
